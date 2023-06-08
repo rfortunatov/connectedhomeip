@@ -220,7 +220,7 @@ CHIP_ERROR ExchangeContext::SendMessage(Protocols::Id protocolId, uint8_t msgTyp
 #if CONFIG_BUILD_FOR_HOST_UNIT_TEST
         }
 #endif
-        if (err != CHIP_NO_ERROR)
+        if (err != CHIP_NO_ERROR && startedResponseTimer)
         {
             // We should only cancel the response timer if the ExchangeContext fails to send the message that starts the response
             // timer.
