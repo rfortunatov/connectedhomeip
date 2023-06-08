@@ -31,7 +31,10 @@ declare_args() {
   chip_use_secure_cert_dac_provider = false
   chip_use_esp32_ecdsa_peripheral = false
   chip_enable_ethernet = false
+<<<<<<< HEAD
   chip_enable_route_hook = false
+=======
+>>>>>>> 04b2fdfc6f7259116a50170b0d38dab9507e20d3
 }
 
 defines = [
@@ -137,9 +140,6 @@ static_library("ESP32") {
     }
   }
 
-  if (chip_mdns == "platform") {
-    sources += [ "DnssdImpl.cpp" ]
-  }
 
   if (chip_enable_ethernet) {
     sources += [
